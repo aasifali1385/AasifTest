@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".views.RestaurantActivity">
+
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="?attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="start"
+        android:foreground="?attr/actionBarItemBackground"
+        android:padding="14dp"
+        app:srcCompat="@drawable/ic_back" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginHorizontal="10dp"
+        android:background="?android:attr/listDivider" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="30dp"
+        android:adjustViewBounds="true"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#80000000"
+        android:lineSpacingMultiplier="1.4"
+        android:padding="10dp"
+        android:text="Name\nName"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+</LinearLayout>

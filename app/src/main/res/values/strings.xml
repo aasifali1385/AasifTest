@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Aasif Test</string>
+
+    <!--    Login Activity-->
+    <string name="welcome_back">Welcome Back</string>
+    <string name="login_to_continue">Login to Continue</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="new_account">Don\'t have an account? <i><font color="#3700B3">Create Account</font></i></string>
+    <string name="login_account">Already have an account? <i><font color="#3700B3">Login</font></i></string>
+
+
+    <!--    Signup Activity-->
+    <string name="create_account">Create Account</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register">Register</string>
+
+</resources>
