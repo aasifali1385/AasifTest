@@ -12,20 +12,7 @@ import com.aasif.test.roomDB.Product
 import com.google.gson.JsonObject
 import kotlinx.coroutines.flow.Flow
 
-class Repository(
-    private val sp: SharedPreferences,
-    private val rest: ApiInterface,
-    private val dao: Dao
-) {
-
-
-    //// Room DB ////
-    suspend fun testRoom(): Flow<List<Product>> {
-//        dao.addProduct(Product(0, "https://image.com", "First", 111, 10))
-
-        return dao.getProducts()
-    }
-
+class Repository(private val sp: SharedPreferences, private val rest: ApiInterface) {
 
     //// Shared Preferences ////
 
