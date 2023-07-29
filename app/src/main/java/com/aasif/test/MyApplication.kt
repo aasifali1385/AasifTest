@@ -3,6 +3,7 @@ package com.aasif.test
 import android.app.Application
 import android.content.Context
 import com.aasif.test.retrofit.API
+import com.aasif.test.roomDB.AppDatabase
 
 class MyApplication : Application() {
 
@@ -14,7 +15,8 @@ class MyApplication : Application() {
 
         repository = Repository(
             getSharedPreferences("user", Context.MODE_PRIVATE),
-            API.getApiService()
+            API.getApiService(),
+            AppDatabase.getDatabase(applicationContext).dao()
         )
     }
 }

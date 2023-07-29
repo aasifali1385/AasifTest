@@ -27,18 +27,17 @@ interface Dao {
 
     //---------------- Invoice --------------------
 
-    //    @Query("SELECT * FROM invoice")
-    @Query("SELECT * FROM invoice")
-    fun getInvoices(): Flow<List<Invoice>>
-
-    @Insert
-    suspend fun addInvoice(invoice: Invoice): Long
-
-    @Delete
-    suspend fun deleteInvoice(invoice: Invoice)
-
-    @Query("SELECT SUM(total) FROM invoice WHERE date BETWEEN :start AND :end")
-    suspend fun getTodaySale(start: Long, end: Long): Int?
+//    @Query("SELECT * FROM invoice")
+//    fun getInvoices(): Flow<List<Invoice>>
+//
+//    @Insert
+//    suspend fun addInvoice(invoice: Invoice): Long
+//
+//    @Delete
+//    suspend fun deleteInvoice(invoice: Invoice)
+//
+//    @Query("SELECT SUM(total) FROM invoice WHERE date BETWEEN :start AND :end")
+//    suspend fun getTodaySale(start: Long, end: Long): Int?
 
 
 }

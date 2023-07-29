@@ -2,6 +2,7 @@ package com.aasif.test.views
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -22,7 +23,10 @@ class LoginActivity : AppCompatActivity() {
         bind = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(bind.root)
 
-        val viewModel = ViewModelProvider(this, MainViewModelFactory((application as MyApplication).repository))[MainViewModel::class.java]
+        val viewModel = ViewModelProvider(
+            this,
+            MainViewModelFactory((application as MyApplication).repository)
+        )[MainViewModel::class.java]
 //        val viewModel: MainViewModel by viewModels { MainViewModelFactory(repository) }
 
 
