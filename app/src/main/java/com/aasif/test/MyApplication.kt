@@ -15,7 +15,8 @@ class MyApplication : Application() {
 
         repository = Repository(
             getSharedPreferences("user", Context.MODE_PRIVATE),
-            API.getApiService()
+            API.getApiService(),
+            API.getCodeOnService()
         )
     }
 }

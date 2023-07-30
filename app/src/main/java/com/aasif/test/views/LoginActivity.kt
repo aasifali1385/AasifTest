@@ -36,6 +36,8 @@ class LoginActivity : AppCompatActivity() {
         }
 
 
+//        viewModel.upload()
+
 
         bind.login.setOnClickListener {
             when {
@@ -59,8 +61,6 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
         }
-
-
 
         bind.createAccount.setOnClickListener {
             startActivity(Intent(this, SignupActivity::class.java))
