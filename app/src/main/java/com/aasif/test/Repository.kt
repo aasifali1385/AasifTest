@@ -81,7 +81,7 @@ class Repository(
         val fileBody = file.asRequestBody("application/octet-stream".toMediaTypeOrNull())
         val filePart = MultipartBody.Part.createFormData("cv_doc", file.name, fileBody)
 
-        return codeon.apply(nameBody, contactBody, emailBody, applyBody, filePart)
+        return codeon.applyJob(nameBody, contactBody, emailBody, applyBody, filePart)
     }
 
 

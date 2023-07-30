@@ -29,7 +29,7 @@ interface ApiInterface {
 
     @Multipart
     @POST("Carrer")
-    suspend fun apply(
+    suspend fun applyJob(
         @Part("name") name: RequestBody,
         @Part("contact") contact: RequestBody,
         @Part("email") email: RequestBody,

@@ -30,21 +30,19 @@ class MainViewModel(private val repository: Repository) : ViewModel() {
     val foods: LiveData<List<FoodsCate>> get() = _foods
 
 
-    init {
-
-//        viewModelScope.launch {
-//            Log.e("test", "Start")
-//            val career = Career(
-//                "John Doe",
-//                "1234567890",
-//                "johndoe@example.com",
-//                "Applying for a position"
-//            )
-//            val file = File(Environment.getExternalStorageDirectory(), "aaa.pdf")
-//            val res = repository.upload(career, file)
-//            Log.e("test", "Response : $res")
-//        }
-
+    fun uploadFile() {
+        viewModelScope.launch {
+            Log.e("test", "Start")
+            val career = Career(
+                "John Doe",
+                "1234567890",
+                "johndoe@example.com",
+                "Applying for a position"
+            )
+            val file = File(Environment.getExternalStorageDirectory(), "aaa.pdf")
+            val res = repository.upload(career, file)
+            Log.e("test", "Response : $res")
+        }
     }
 
 
