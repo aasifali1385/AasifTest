@@ -60,49 +60,23 @@ class MainViewModel(private val repository: Repository) : ViewModel() {
     }
 
     fun login(login: Login, loginSuccess: () -> Unit, loginFailed: (String) -> Unit) {
-        viewModelScope.launch {
-
-            val response = repository.loginUser(login)
-
-            if (response == null)
-                loginFailed("Something Went Wrong !")
-            else {
+        repository.loginUser(login) { response ->
+            if (response.code() == 200) {
                 loginSuccess()
-//                 Save User
-//                val jsonObj = JSONObject(response.toString())
-//                val user = jsonObj.getJSONObject("data")
-                repository.saveUser(
-                    mapOf(
-                        "name" to response.data.name,
-                        "email" to response.data.email,
-                        "phone" to response.data.phone_number
-                    )
-                )
+                repository.saveUser(response.body()!!.data)
+            } else {
+                loginFailed(response.message())
             }
         }
     }
 
     fun register(signup: Signup, signupSuccess: () -> Unit, signupFailed: (String) -> Unit) {
-        viewModelScope.launch {
-
-            val response = repository.registerUser(signup)
-
-            if (response == null)
-                signupFailed("Something Went Wrong !")
-            else {
+        repository.registerUser(signup) { response ->
+            if (response.code() == 200) {
                 signupSuccess()
-                // Save User
-//                val jsonObj = JSONObject(response.toString())
-//                val user = jsonObj.getJSONObject("data")
-                repository.saveUser(
-                    mapOf(
-                        "name" to response.data.name,
-                        "email" to response.data.email,
-                        "phone" to response.data.phone_number
-                    )
-                )
-            }
-
+                repository.saveUser(response.body()!!.data)
+            } else
+                signupFailed(response.message())
         }
     }
 
