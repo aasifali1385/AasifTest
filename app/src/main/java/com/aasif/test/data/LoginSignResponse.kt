@@ -1,6 +1,6 @@
 package com.aasif.test.data
 
-data class LoginSignupResponse(
+data class LoginSignResponse(
 
     val success: Boolean,
     val statusCode:Int,

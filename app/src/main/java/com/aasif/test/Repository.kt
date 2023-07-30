@@ -1,10 +1,9 @@
 package com.aasif.test
 
 import android.content.SharedPreferences
-import android.util.Log
 import com.aasif.test.data.Career
 import com.aasif.test.data.Login
-import com.aasif.test.data.LoginSignupResponse
+import com.aasif.test.data.LoginSignResponse
 import com.aasif.test.data.Signup
 import com.aasif.test.data.UserData
 import com.aasif.test.retrofit.ApiInterface
@@ -42,30 +41,30 @@ class Repository(
 
     ////  REST API  ////
 
-    fun loginUser(login: Login, response: (Response<LoginSignupResponse?>) -> Unit) {
-        rest.login(login).enqueue(object : Callback<LoginSignupResponse?> {
+    fun loginUser(login: Login, response: (Response<LoginSignResponse?>) -> Unit) {
+        rest.login(login).enqueue(object : Callback<LoginSignResponse?> {
             override fun onResponse(
-                call: Call<LoginSignupResponse?>,
-                response: Response<LoginSignupResponse?>
+                call: Call<LoginSignResponse?>,
+                response: Response<LoginSignResponse?>
             ) {
                 response(response)
             }
 
-            override fun onFailure(call: Call<LoginSignupResponse?>, t: Throwable) {
+            override fun onFailure(call: Call<LoginSignResponse?>, t: Throwable) {
             }
         })
     }
 
-    fun registerUser(signup: Signup, response: (Response<LoginSignupResponse?>) -> Unit) {
-        rest.register(signup).enqueue(object : Callback<LoginSignupResponse?> {
+    fun registerUser(signup: Signup, response: (Response<LoginSignResponse?>) -> Unit) {
+        rest.register(signup).enqueue(object : Callback<LoginSignResponse?> {
             override fun onResponse(
-                call: Call<LoginSignupResponse?>,
-                response: Response<LoginSignupResponse?>
+                call: Call<LoginSignResponse?>,
+                response: Response<LoginSignResponse?>
             ) {
                 response(response)
             }
 
-            override fun onFailure(call: Call<LoginSignupResponse?>, t: Throwable) {
+            override fun onFailure(call: Call<LoginSignResponse?>, t: Throwable) {
             }
         })
     }
