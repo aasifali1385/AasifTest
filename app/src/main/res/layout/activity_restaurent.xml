@@ -15,7 +15,7 @@
         android:layout_height="?attr/actionBarSize"
         android:layout_gravity="start"
         android:foreground="?attr/actionBarItemBackground"
-        android:padding="14dp"
+        android:padding="16dp"
         app:srcCompat="@drawable/ic_back" />
 
     <View

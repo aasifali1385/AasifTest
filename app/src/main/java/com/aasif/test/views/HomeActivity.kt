@@ -13,7 +13,7 @@ import com.aasif.test.MyApplication
 import com.aasif.test.R
 import com.aasif.test.databinding.ActivityHomeBinding
 import com.aasif.test.data.FoodsCate
-import com.aasif.test.adapters.RestaurantAdapter
+import com.aasif.test.adapters.RecyclerAdapter
 import com.aasif.test.viewmodels.MainViewModel
 import com.aasif.test.viewmodels.MainViewModelFactory
 
@@ -64,7 +64,7 @@ class HomeActivity : AppCompatActivity() {
             view.findViewById<TextView>(R.id.cateName).text = it.name
             val recycler = view.findViewById<RecyclerView>(R.id.recycler)
 
-            val restAdapter = RestaurantAdapter { restaurant ->
+            val recyclerAdapter = RecyclerAdapter { restaurant ->
                 val intent = Intent(this, RestaurantActivity::class.java)
                 intent.putExtra("restaurant", restaurant)
                 startActivity(intent)
@@ -72,9 +72,9 @@ class HomeActivity : AppCompatActivity() {
 
             recycler.layoutManager =
                 LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-            recycler.adapter = restAdapter
+            recycler.adapter = recyclerAdapter
 
-            restAdapter.loadRestaurants(it.restaurant, query)
+            recyclerAdapter.loadRestaurants(it.restaurant, query)
 
             bind.linear.addView(view)
         }

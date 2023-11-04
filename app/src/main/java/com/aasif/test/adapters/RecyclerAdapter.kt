@@ -11,8 +11,8 @@ import coil.load
 import com.aasif.test.R
 import com.aasif.test.data.Restaurant
 
-class RestaurantAdapter(val restClick: (Restaurant) -> Unit) :
-    RecyclerView.Adapter<RestaurantAdapter.RestHolder>() {
+class RecyclerAdapter(val restClick: (Restaurant) -> Unit) :
+    RecyclerView.Adapter<RecyclerAdapter.RestHolder>() {
 
     private val restaurant = mutableListOf<Restaurant>()
 
@@ -23,9 +23,9 @@ class RestaurantAdapter(val restClick: (Restaurant) -> Unit) :
     }
 
     inner class RestHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val restImage = view.findViewById<ImageView>(R.id.restImage)
-        val restName = view.findViewById<TextView>(R.id.restName)
-        val restaurant = view.findViewById<CardView>(R.id.restaurant)
+        val restImage: ImageView = view.findViewById(R.id.restImage)
+        val restName: TextView = view.findViewById(R.id.restName)
+        val restaurant: CardView = view.findViewById(R.id.restaurant)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestHolder {
